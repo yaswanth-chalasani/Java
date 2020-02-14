@@ -1,29 +1,20 @@
-package programs;
+import java.io.*;
+public class Test1 {
 
-abstract class Animal {
- abstract void eat();
-}
-class Tiger extends Animal
-{
-	void eat()
-	{
-		System.out.println("I eat only Non Veg");
-	}
-}
-class Goat extends Animal
-{
-	void eat()
-	{
-		System.out.println("I eat only Veg");
-	}
-}
-class Test1
-{
 	public static void main(String[] args) {
-		Animal A;
-		 A=new Tiger();
-		 A.eat();
-		 A=new Goat();
-		 A.eat();
+		// TODO Auto-generated method stub
+		try
+		{
+			File f=new File("pw2.java");
+			FileReader fin=new FileReader(new File("pwd1.txt"));
+			FileWriter fout=new FileWriter(f);
+			int i=0;
+			while((i=fin.read())!=-1)
+			{
+				fout.write(i);
+			}
+			fout.close();
+		}catch(Exception e) {}
 	}
+
 }
