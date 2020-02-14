@@ -1,20 +1,21 @@
-package programs;
-class emp{
-int eno=101;
-	void disp() {
-		System.out.println(eno);
-	}
-}
-class manager extends emp
+package newpage;
+import java.io.*;
+public class Test 
 {
-	void display() {
-		disp();
-		System.out.println("Manager class");
+	public static void main(String[] args)throws Exception 
+	{
+		String s1="pw2.java";
+		String s2="pw1.java";
+		int i;
+		FileInputStream fis=new FileInputStream(s2);
+		FileOutputStream fos=new FileOutputStream(s1,false);
+		fis.skip(3);
+		while((i=fis.read())!=-1)
+		{
+			fos.flush();
+			fos.write(i);
+		}	
+			fos.close();
+			fis.close();	
 	}
-}
-public class Test {
-public static void main(String[] args) {
-	manager m=new manager();
-	m.display();
-}
 }
